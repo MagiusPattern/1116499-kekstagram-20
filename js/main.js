@@ -78,7 +78,6 @@ picturesElement.appendChild(fragment);
 var userDialog = document.querySelector('.big-picture');
 userDialog.classList.remove('hidden');
 
-
 var bigPictureImg = userDialog.querySelector('.big-picture__img').querySelector('img');
 bigPictureImg.src = pictureArray[0].url;
 var bigPictureLikes = userDialog.querySelector('.likes-count');
