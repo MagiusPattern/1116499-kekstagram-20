@@ -105,3 +105,31 @@ socialCaption.textContent = pictureArray[0].description;
 userDialog.querySelector('.social__comment-count').classList.add('hidden');
 userDialog.querySelector('.comments-loader').classList.add('hidden');
 document.querySelector('body').classList.add('modal-open');
+
+var uploadFile = document.querySelector('#upload-file');
+var uploadCancel = document.querySelector('#upload-cancel');
+
+var onUploadEscPress = function (evt) {
+  if (evt.key === 'Escape') {
+    evt.preventDefault();
+    closeUpload();
+  }
+};
+
+var openUpload = function () {
+  document.querySelector('body').classList.add('modal-open');
+  document.addEventListener('keydown', onUploadEscPress);
+};
+
+var closeUpload = function () {
+  document.querySelector('body').classList.remove('modal-open');
+  document.removeEventListener('keydown', onUploadEscPress);
+};
+
+uploadFile.addEventListener('change', function () {
+  openUpload();
+});
+
+uploadCancel.addEventListener('click', function () {
+  closeUpload();
+});
